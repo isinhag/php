@@ -71,6 +71,24 @@
     </ul>
 
     <!-- Criar aqui seu programa PHP -->
+    <?php
+    $a = 5; 
+
+    if($a > 1) {
+        echo "Maior que 1";
+    } 
+
+    ?>
+
+    <br>
+
+    <?php
+    $a = 5;
+    
+    if($a > 1) 
+        echo "Maior que 1"; 
+
+    ?>
     
     
     <hr>
@@ -88,12 +106,12 @@
     </ul>
     
     <br>
-    <h4>&nbsp;if ( comparação ) {</h4>
+    <h4>&nbsp;if ( comparação ) </h4>
     <h4>&emsp;comando para comparação verdadeira</h4>
     <h4>&emsp;Se necessário aninhar, usar if simples ou composto</h4>
-    <h4>&nbsp;else {</h4>
+    <h4>&nbsp;else </h4>
     <h4>&emsp;comando para comparação falsa.</h4>
-    <h4>&nbsp;}</h4>
+    <h4>&nbsp;</h4>
     <hr>
 
     <p>&nbsp;Criar um programa PHP que gere saída no modo composto obedecendo a seguinte regra de negócio:</p>
@@ -105,7 +123,7 @@
             <li>Estoque mínimo: 14</li>
         </ol>
         <li>Exibir o produto em título tamanho h3</li>
-        <li>Comparar estoque atual com estoque nínimo</li>
+        <li>Comparar estoque atual com estoque mínimo</li>
         <li>Para: estoque INSUFICIENTE</li>
         <ol>
             <li>exibir mensagem: É necessário comprar.</li>
@@ -120,9 +138,27 @@
     </ul>
     <hr>
 
-    <!-- Criar aqui seu programa PHP -->
-
     
+    <!-- Criar aqui seu programa PHP -->
+    
+    <?php
+        $produto = "Ultrabook ASUS";
+        $estoque_atual = 0;
+        $estoque_mínimo = 14;
+
+        echo "<h3>$produto</h3>";
+        
+        if ($estoque_atual < $estoque_mínimo) {
+            echo "<div class='repor'> É necessário comprar </div>";
+            echo "<br>";
+            echo "<p> <mark> URGENTE </mark> </p>";
+        } else {
+            echo "<div class='ok'>  Estoque OK! </div>";
+        }
+
+    ?>
+
+
     <hr>
 
     <!-- ___________________________________________________________________ -->
@@ -139,15 +175,15 @@
     </ul>
     
     <br>
-    <h4>&nbsp;if ( comparação ) {</h4>
+    <h4>&nbsp;if ( comparação ) </h4>
     <h4>&emsp;comando para 1ª comparação verdadeira;</h4>
-    <h4>&nbsp;elseif ( comparação ) {</h4>
+    <h4>&nbsp;elseif ( comparação ) </h4>
     <h4>&emsp;comando para 2ª comparação verdadeira;</h4>
-    <h4>&nbsp;elseif ( comparação ) {</h4>
+    <h4>&nbsp;elseif ( comparação ) </h4>
     <h4>&emsp;comando para 3ª comparação verdadeira;</h4>
-    <h4>&nbsp;else {</h4>
+    <h4>&nbsp;else </h4>
     <h4>&emsp;comando para comparação falsa.;</h4>
-    <h4>&nbsp;}</h4>
+    <h4>&nbsp;</h4>
     <hr>
 
     <p>&nbsp;Criar um programa PHP que gere saída no modo encadeado obedecendo a seguinte regra de negócio:</p>
@@ -168,7 +204,28 @@
     <hr>
     
     <!-- Criar aqui seu programa PHP -->
+    Lista de opções
+    1- Pastel
+    2- Pizza
+    3- Esfiha
+
+    <?php
+    $opção = 1;
     
+    if ($opção == 1) {
+        $opçãoEscolhida = "Pastel";
+    } elseif ($opção == 2) {
+        $opçãoEscolhida = "Pizza";
+    } elseif ($opção == 3) {
+        $opçãoEscolhida = "Esfiha";
+    } else {
+        $opçãoEscolhida = "Opção Inválida";
+    }
+
+    echo "<p> $opçãoEscolhida</p>";
+
+    ?>
+
     <hr>
 
     <!-- ___________________________________________________________________ -->
@@ -188,12 +245,12 @@
     </ul>
     
     <br>
-    <h4>&nbsp;switch ( escolha dentro da variável ) {</h4>
+    <h4>&nbsp;switch ( escolha dentro da variável ) </h4>
     <h4>&emsp;case 1: comando para 1ª escolha; break;</h4>
     <h4>&emsp;case 2: comando para 2ª escolha; break;</h4>
     <h4>&emsp;case 3: comando para 3ª escolha; break;</h4>
     <h4>&emsp;default: avisar usuário; break;</h4>
-    <h4>&nbsp;}</h4>
+    <h4>&nbsp;</h4>
     <h4>&nbsp;exibir informação conforme opção escolhida.</h4>
     <hr>
 
@@ -202,7 +259,18 @@
     <hr>
 
     <!-- Criar aqui seu programa PHP -->
-    
+    <?php
+    $opção = 3;
+
+    switch ($opção) {
+        case 1: $pedido = "Pastel"; break;
+        case 2: $pedido = "Pizza"; break;
+        case 3: $pedido = "Esfiha"; break;
+        default: $pedido = "Opção Inválida"; break;
+    }
+
+    echo "<p>$pedido</p>"
+    ?>
     
     <!-- Rodapé -->
     <div class="container">
