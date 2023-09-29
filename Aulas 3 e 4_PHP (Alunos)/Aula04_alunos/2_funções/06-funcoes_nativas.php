@@ -16,9 +16,17 @@
 // Trim(param) -> Remove espaços antes e depois de strings
 $nome = "Ignacio Cunha        ";
 $nomeSemEspaco = trim($nome);
+$nome2 = " Isabela Gomes       "
+
 ?>
 
-<!-- 1ª Digitação (Aqui) -->
+<pre> <?=var_dump($nome)?> </pre>
+<pre> <?=var_dump(trim($nome))?> </pre>
+
+<pre> <?=var_dump($nome2)?> </pre>
+
+<pre> <?=var_dump(trim($nome2))?> </pre>
+
 
 <!-- ___________________________________________________________ -->
 <!-- Substitui um texto por outro-->
@@ -28,6 +36,11 @@ $fraseFeia = "<p>Fulano é um bobão e xarope</p>";
 
 
 //  2ª Digitação (Aqui)
+$fraseBonita = str_replace (
+    ["bobão", "xarope"],
+    ["cara legal", "genial" ],
+    $fraseFeia
+);
 
 
 echo $fraseFeia;
@@ -43,6 +56,8 @@ $arrayLinguagens = explode(" - ", $linguagens);
 ?>
 
 <!-- 3ª Digitação (Aqui) -->
+<pre> <?=var_dump($linguagens)?> </pre>
+<pre> <?=var_dump($arrayLinguagens)?> </pre>
 
 <!-- ___________________________________________________________ -->
 <hr>
@@ -51,6 +66,11 @@ $arrayLinguagens = explode(" - ", $linguagens);
 
 <!-- 4ª Digitação (Aqui) -->
 
+<?php
+$bandas = ["Savage", "Nightwish","Ghost"];
+$stringBandas = implode(" | ", $bandas);
+?>
+
 <pre> <?=var_dump($bandas)?> </pre>
 <pre> <?=var_dump($stringBandas)?> </pre>
 <!-- ___________________________________________________________ -->
@@ -58,6 +78,18 @@ $arrayLinguagens = explode(" - ", $linguagens);
     <h3>extract()</h3>
 
 <!-- 5ª Digitação (Aqui) -->
+
+<?php
+    $aluno = [
+        "id" => "Fulano",
+        "idade" => 25,
+        "sexo" => "masculino",
+        "cidade" => "Santo André"
+    ];
+
+    extract($aluno);
+?>
+
 
 <p> <?=$id?> </p>
 <p> <?=$idade?> </p>
@@ -73,9 +105,12 @@ $arrayLinguagens = explode(" - ", $linguagens);
 $email = "ignacio@gmail.com.br";
 $ataque = "<script> document.body.innerHTML = 'Sou ráqui!! hahahah >.<' </script>";
 
-// echo $ataque;
+// echo $ataque
 
 //  6ª Digitação (Aqui)
+$ataqueAnulado = filter_var($ataque, FILTER_SANITIZE_SPECIAL_CHARS);
+
+echo $ataqueAnulado;
 
 ?>
 
@@ -118,6 +153,15 @@ $senhaSegura = password_hash($senha, PASSWORD_DEFAULT);
 <!-- Como checar se a senha é a correta -->
 
 <!-- 7ª Digitação (Aqui)  -->
-    
+<?php
+    $senhaDigitada = "123abc";
+
+    if (password_verify($senhaDigitada, $senhaSegura)) {
+        echo "Beleza!!! Senhas iguais...";
+    } else {
+        echo "Opa!!! Senha errada.";
+    }
+
+?>
 </body>
 </html>
